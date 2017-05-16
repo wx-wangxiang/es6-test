@@ -43,6 +43,7 @@ task5.scene5();
 task5.scene6();*/
 
 task6.scene1();
+task6.scene2();
 
 /*task8.scene1();
 task8.scene3();
