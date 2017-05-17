@@ -4,6 +4,7 @@ import task3 from './task3';
 import task4 from './task4';
 import task5 from './task5';
 import task6 from './task6';
+import task7 from './task7';
 import task8 from './task8';
 
 //task1.letTest();
@@ -42,8 +43,21 @@ task5.scene4();
 task5.scene5();
 task5.scene6();*/
 
-task6.scene1();
+/*task6.scene1();
 task6.scene2();
+task6.scene3();
+task6.scene4();
+task6.scene5();
+task6.scene6();
+task6.scene7();
+task6.scene8();
+task6.scene9();
+task6.scene10();*/
+
+task7.scene1();
+task7.scene2();
+task7.scene3();
+task7.scene4();
 
 /*task8.scene1();
 task8.scene3();
