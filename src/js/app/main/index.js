@@ -58,6 +58,7 @@ task7.scene1();
 task7.scene2();
 task7.scene3();
 task7.scene4();
+task7.scene6();
 
 /*task8.scene1();
 task8.scene3();
