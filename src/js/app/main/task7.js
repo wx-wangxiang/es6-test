@@ -7,7 +7,9 @@ export default {
 	/**
 	 * 函数参数的默认值
 	 * 注意点：
-	 * 参数变量是默认声明的，所以不能用let或const再次声明变量，否则会报错
+	 * 1.参数变量是默认声明的，所以不能用let或const再次声明变量，否则会报错
+	 * 2.参数默认值的位置，一般都是函数的尾参数，如果非尾参数设定了默认值，实际上
+	 * 这个参数是没法省略的
 	 */
 	scene1() {
 		//传统函数默认值的写法
@@ -25,6 +27,20 @@ export default {
 		log(es5Add(0, 0)); //3
 		log(es6Add(0, 0)); //0
 
+	},
+	/**
+	 * 一个关于作用域的问题
+	 * 一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个
+	 * 单独的作用域（context）。等到初始化结束，这个作用域就会消失。
+	 * 这种语法行为，在不设置参数默认值时，是不会出现的。
+	 */
+	sceneAdd1() {
+		const x = 'hello';
+
+		function test(x, y=x) {
+			log('作用域', x, y);
+		}
+		test('ccc');
 	},
 	/**
 	 * rest参数
@@ -147,9 +163,9 @@ export default {
 	 *  的对象，作为上下文环境（即this对象），绑定到右边的函数上；
 	 */
 	scene8() {
-		foo::bar;
+		//foo::bar;
 		//相当于 bar.bind(foo);
-		foo::bar(...arguments);
+		//foo::bar(...arguments);
 		//相当于 bar.apply(foo, arguments);
 	},
 	/**

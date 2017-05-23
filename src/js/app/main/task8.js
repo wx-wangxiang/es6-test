@@ -11,9 +11,22 @@ export default {
 	 */
 	scene1() {
 		const PI = 3.1415926;
-		const obj = {PI}; // {PI: 3.1415926}
+		const es5 = { PI: PI};
+		const es6 = { PI }; // {PI: 3.1415926}
+		const es5Method = {
+			say: function() {
+				console.log('hello');
+			}
+		}
+		const es6Method = {
+			say() {
+				console.log('hello');
+			}
+		}
 
-		log(obj);
+		log(es5, es6);
+		es5Method.say();
+		es6Method.say();
 	},
 	/**
 	 * 对象属性的简洁表示法用于函数的返回值，将会很方便
@@ -91,5 +104,27 @@ export default {
 	 * @1：为对象添加属性
 	 * @2：为对象添加方法
 	 * @3：克隆对象
+	 * 注意，该方法是浅拷贝
 	 */
+	/**
+	 * Object.entries()
+	 * @return {[type]} [description]
+	 */
+	scene7() {
+		const test = {
+			a: 1,
+			b: 2,
+			c: 3
+		}
+		for (let [key, value] of Object.entries(test)) {
+			log(key, value);
+		}
+	},
+	/**
+	 * 拓展运算符
+	 */
+	scene8() {
+		const {a, b, ...rest} = {a: 1, b: 2, c: 3, d: 4};
+		log(rest);
+	}
 }
